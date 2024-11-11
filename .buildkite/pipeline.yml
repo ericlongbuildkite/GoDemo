@@ -23,7 +23,7 @@ steps:
     label: ':golang: build'
     command: "cd hello && go build -o dist/app"
     artifact_paths:
-      - 'dist/app' # upload the built application as an artifact
+      - 'hello/dist/app' # upload the built application as an artifact
     plugins:
       - docker-compose#v5.4.0:
           run: app
