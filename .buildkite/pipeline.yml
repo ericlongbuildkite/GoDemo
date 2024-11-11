@@ -21,7 +21,7 @@ steps:
   # build the application after the quality assurance steps are done
   - key: build
     label: ':golang: build'
-    command: go build -o dist/app
+    command: "cd hello && go build -o dist/app"
     artifact_paths:
       - 'dist/app' # upload the built application as an artifact
     plugins:
