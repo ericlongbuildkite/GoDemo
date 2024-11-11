@@ -1,3 +1,7 @@
 steps:
   - label: "Example Test"
     command: echo "Hello!"
+  - input: "Information please"
+    fields:
+      - text: "What is the date today?"
+        key: "todays-date"
