@@ -1,7 +1,7 @@
 steps:
-  - label: "Example Test"
-    command: echo "Hello!"
-  - input: "Information please"
+  - input: "Who is running this script?"
     fields:
-      - text: "What is the date today?"
-        key: "todays-date"
+      - text: "Your name"
+        key: "name"
+  - label: "Run script"
+    command: script.sh
