@@ -43,4 +43,5 @@ steps:
     command:
       - buildkite-agent artifact download hello/hello .
       - chmod +x ./hello/hello
-      - ./hello/hello ${first_name}
+      - ./hello/hello "$$first_name"
+      depends_on: build
