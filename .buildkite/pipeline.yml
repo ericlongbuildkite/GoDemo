@@ -23,9 +23,9 @@ steps:
   # build the application after the quality assurance steps are done
   - key: build
     label: ':golang: build'
-    command: "cd hello && go build -o dist/app"
+    command: "cd hello && go build -o hello"
     artifact_paths:
-      - 'hello/dist/app' # upload the built application as an artifact
+      - 'hello/hello' # upload the built application as an artifact
     plugins:
       - docker-compose#v5.4.0:
           run: app
@@ -41,6 +41,6 @@ steps:
   - key: run
     label: ':runner: Run'
     command:
-      - buildkite-agent artifact download dist/app .
-      - chmod +x ./dist/app
-      - ./dist/app ${first_name}
+      - buildkite-agent artifact download hello/hello .
+      - chmod +x ./hello/hello
+      - ./hello/hello ${first_name}
