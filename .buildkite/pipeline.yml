@@ -41,7 +41,7 @@ steps:
   - key: run
     label: ':runner: Run'
     command:
-      - buildkite-agent artifact download hello/hello .
+      - buildkite-agent artifact download hello/hello . --step build
       - chmod +x ./hello/hello
       - ./hello/hello $(buildkite-agent meta-data get "first_name")
     depends_on: build
